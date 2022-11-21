@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1066018455674",
+    "firebase_url": "https://myfarmed-bcba2-default-rtdb.firebaseio.com",
+    "project_id": "myfarmed-bcba2",
+    "storage_bucket": "myfarmed-bcba2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066018455674:android:069eebc4aa2e0d66213bc3",
+        "android_client_info": {
+          "package_name": "com.example.myfarmed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066018455674-bnpqrc09cs1og5po6lgho9npms8fk36a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myfarmed",
+            "certificate_hash": "4fa620eae145d5dae9212d17b2bfcfa59a759ee4"
+          }
+        },
+        {
+          "client_id": "1066018455674-7qvqdf5rkfi8iq2ujmav61c10v0iq4oo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL5cQLoZLxWNSryWm1V643yDWwMs3Pwnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066018455674-7qvqdf5rkfi8iq2ujmav61c10v0iq4oo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

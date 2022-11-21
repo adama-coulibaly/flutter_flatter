@@ -1,5 +1,6 @@
-import 'dart:ffi';
 
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myfarmed/pages/produits.dart';
 
@@ -68,11 +69,11 @@ class _homePrincipalState extends State<homePrincipal> {
 // ICI ON PLACE NOS SERVICES
 
           mesCardes(titre: "Pondeuses",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Pondeuse() ),);}, child: const Text("Visiter")),),
-          mesCardes(titre: "Chairs",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  inscription() ),);}, child: const Text("Visiter")),),
-          mesCardes(titre: "Barahama",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  inscription() ),);}, child: const Text("Visiter")),),
-          mesCardes(titre: "Poussins",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  inscription() ),);}, child: const Text("Visiter")),),
-          mesCardes(titre: "Oeufs",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  inscription() ),);}, child: const Text("Visiter")),),
-          mesCardes(titre: "Materieaux",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  inscription() ),);}, child: const Text("Visiter")),),
+          mesCardes(titre: "Chairs",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);}, child: const Text("Visiter")),),
+          mesCardes(titre: "Barahama",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);}, child: const Text("Visiter")),),
+          mesCardes(titre: "Poussins",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);}, child: const Text("Visiter")),),
+          mesCardes(titre: "Oeufs",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);}, child: const Text("Visiter")),),
+          mesCardes(titre: "Materieaux",  image: 'assets/images/pondeuses.jpg',  textButton:   TextButton( onPressed: (){ Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);}, child: const Text("Visiter")),),
           
             // mesCardes(titre: "Pondeuses", , image: 'assets/images/pondeuses.jpg',liens: 'Kayes',),
             // mesCardes(titre: "Pondeuses", , image: 'assets/images/pondeuses.jpg',liens: 'Sikasso',),
