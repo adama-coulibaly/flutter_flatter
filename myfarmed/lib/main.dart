@@ -1,11 +1,13 @@
 // ignore_for_file: unrelated_type_equality_checks
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
 import 'package:myfarmed/pages/accueil.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:myfarmed/pages/home.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+
 // import 'package:myfarmed/pages/home.dart';
 
 // ICI ON INITIALISE FIREBASE AVEC  WidgetsFlutterBinding.ensureInitialized();
@@ -217,8 +219,7 @@ return  Scaffold(
 }
 }
 
-
-
+// ICI C'EST LE DEBUT DE WIDGET DE CREATION DE COMPTE
 class Inscription extends StatefulWidget {
 Inscription({super.key});
 
@@ -245,22 +246,46 @@ String passe1,passe2;
 
  if( nameControllerInsc.text == "" ||  adresseMailController.text == "" || passe1Controller.text == "" || passe2Controller.text == ""){
        ok == true;
-        showDialog(
+        /* showDialog(
         context: context,
         builder: (cxt) =>const Center(
-            child:AlertDialog(
-            title: Center(child: Text("Veuillez remplir tous les champs !")),
-            content: Icon(Icons.warning_amber,size: 100,color: Colors.yellow,),
-          ),
-          
-        )
-          
-          );
+           child:AlertDialog(
+            
+            title: Center(child: Text("Veuillez remplir tous les champs !",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+            ),
+            
+            ),
+        
+            content: Icon(Icons.warning_amber,size: 100,color: Color.fromARGB(230, 235, 214, 28)),
+          ),)*/
+
+        child:AwesomeDialog(
+          context: context,
+          dialogType: DialogType.warning,
+           title: 'Veuillez remplir tous les champs !',
+            titleTextStyle: const TextStyle(
+              fontSize: 25, fontWeight: FontWeight.w600
+            ),
+            borderSide: const BorderSide(
+                color: Colors.green,
+                width: 2,
+            ),
+      
+          ).show();
       }
       else{
         if(EmailValider){
            if(passe1Controller.text == passe2Controller.text){
-  
+  ListView(
+    children: const [
+ SpinKitCircle(
+   color: Colors.indigo,
+ )
+    ],
+  );
 FirebaseFirestore.instance.collection("Inscription").add({
     "nom complet":nameControllerInsc.text,
     "adresse mail":adresseMailController.text,
@@ -269,41 +294,24 @@ FirebaseFirestore.instance.collection("Inscription").add({
     
   });
   // ICI CONFIRMATION DE LA CREATION DES COMPTES
-  showDialog(
-            context: context,
-            builder: (ctxt) =>  Center(
+
+ showDialog(
+            context: context, 
+            builder: (ctxt) => const  Center(
               child: AlertDialog(
-                title: const Text("Compte créer avec succes"),
-                content: const Icon(Icons.check_box,size: 100,color: Colors.green,),
-                actions: [
-                  // BOUTON ANNULER
-                    TextButton(onPressed: (){
-                                            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  Inscription() ),);
-                    },
-                  style: TextButton.styleFrom(backgroundColor: Colors.red), child: const Text('Annuler',style: 
-                  TextStyle(color: Colors.white,),
-                  ),
-                  ),
-                  
-                //  BOUTON CONTUNIER
-                  TextButton(onPressed: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  homePrincipal() ),);
-                  },
-                  style: TextButton.styleFrom(backgroundColor: Colors.green), child: const Text('Contunier',style: 
-                  TextStyle(color: Colors.white,),
-                  ),
-                  ),
-
                 
-                  
-                  
-                ], 
-            ),
-            ),
+                
+                title: Text("Compte créer avec succes"),
+                content: Icon(Icons.check_box,size: 100,color: Colors.green,),
+                
+               
+                
+            ),     
+    
+            ),    
             
-        );
-
-
+        );   
+   
 
            }
            else{
@@ -311,13 +319,15 @@ FirebaseFirestore.instance.collection("Inscription").add({
         context: context,
         builder: (cxt) =>const Center(
             child:AlertDialog(
-            title: Text("Mot de passe incorrect !"),
-          )
-        )
-          
-          );
+            title: Text("Mot de passe incorrect !",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+            ),
+            
+            content: Icon(Icons.warning_amber,size: 100,color: Color.fromARGB(230, 235, 214, 28),),),
+        ));
            }
-
         }
         else{
 
@@ -325,8 +335,11 @@ FirebaseFirestore.instance.collection("Inscription").add({
         context: context,
         builder: (cxt) =>const Center(
             child:AlertDialog(
-            title: Text("Email non valide !"),
-          )
+            title: Text("Email non valide !",
+            style: TextStyle(
+              fontSize: 18,
+            ),),
+            content: Icon(Icons.warning_amber,size: 100,color: Color.fromARGB(230, 235, 214, 28)),),
         )
           
           );
