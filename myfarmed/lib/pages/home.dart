@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myfarmed/pages/produits.dart';
@@ -14,7 +12,7 @@ class homePrincipal extends StatefulWidget {
 }
 
 class _homePrincipalState extends State<homePrincipal> {
-//  Ma fonctionde liste des carde
+//  Ma fonction de liste des carde
   @override
   Widget build(BuildContext context) {
     return Scaffold(

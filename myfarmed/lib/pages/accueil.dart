@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:carousel_pro/carousel_pro.dart';
 import '../main.dart';
 
 class myHome extends StatefulWidget {
@@ -44,12 +44,29 @@ class _myHomeState extends State<myHome> {
             const SizedBox(
               height: 50,
             ),
-            Container(
-              child: Image.asset(
-                'assets/images/logo.jpg',
-                height: 200,
-              ),
-            ),
+            // Container(
+            //   child: Image.asset(
+            //     'assets/images/logo.jpg',
+            //     height: 200,
+            //   ),
+            // ),
+//************************************************* ICI MON CARROUSSEL ********************************************/
+            SizedBox(
+  height: 250.0,
+  width: 300.0,
+  child: Carousel(
+     // ignore: prefer_const_literals_to_create_immutables
+     images: [
+      
+      const ExactAssetImage("assets/images/Elevage avicole 35.jpg"),
+      const ExactAssetImage("assets/images/FERME.jpg"),
+      const ExactAssetImage("assets/images/materiels.jpg")
+    ],
+    dotSize: 5,
+    // dotBgColor: Colors.green,
+  )
+),
+//*********************************************************************************** */
             const SizedBox(
               height: 20,
             ),

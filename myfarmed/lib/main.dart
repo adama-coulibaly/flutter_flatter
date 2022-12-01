@@ -1,12 +1,13 @@
-// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
 import 'package:myfarmed/pages/accueil.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:myfarmed/pages/home.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:myfarmed/pages/home.dart';
+//@dart=2.9
 
 // import 'package:myfarmed/pages/home.dart';
 
@@ -165,13 +166,7 @@ return  Scaffold(
             child: ElevatedButton(
               onPressed: () {
 
-                // print(nameController.text);
-                // print(passwordController.text);
-//                 FirebaseFirestore.instance.collection("Etudiants").add({
-//   "email": nameController.text,
-//   "mot de passe": passwordController.text,
-// });
-                // sauvegarder(nameController.text, passwordController.text);
+             
               },
 
                 style: ElevatedButton.styleFrom(
@@ -246,23 +241,7 @@ String passe1,passe2;
 
  if( nameControllerInsc.text == "" ||  adresseMailController.text == "" || passe1Controller.text == "" || passe2Controller.text == ""){
        ok == true;
-        /* showDialog(
-        context: context,
-        builder: (cxt) =>const Center(
-           child:AlertDialog(
-            
-            title: Center(child: Text("Veuillez remplir tous les champs !",
-            style: TextStyle(
-              fontSize: 18,
-            ),
-            ),
-            
-            ),
-        
-            content: Icon(Icons.warning_amber,size: 100,color: Color.fromARGB(230, 235, 214, 28)),
-          ),)*/
-
-        child:AwesomeDialog(
+           child:AwesomeDialog(
           context: context,
           dialogType: DialogType.warning,
            title: 'Veuillez remplir tous les champs !',
@@ -294,27 +273,42 @@ FirebaseFirestore.instance.collection("Inscription").add({
     
   });
   // ICI CONFIRMATION DE LA CREATION DES COMPTES
+  
+        AwesomeDialog(
+          context: context,
+          dialogType: DialogType.success,
+          
+            title: 'Compte créer avec succes',
 
- showDialog(
-            context: context, 
-            builder: (ctxt) => const  Center(
-              child: AlertDialog(
-                
-                
-                title: Text("Compte créer avec succes"),
-                content: Icon(Icons.check_box,size: 100,color: Colors.green,),
-                
-               
-                
-            ),     
-    
-            ),    
+            titleTextStyle: const TextStyle(
+              fontSize: 25, fontWeight: FontWeight.w600
+            ),
+            borderSide: const BorderSide(
+                color: Colors.green,
+                width: 2,
+            ),
             
-        );   
+      btnOk: TextButton(onPressed: (){
+         Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const homePrincipal() ),);
+      }, 
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.green,
+      ),
+      
+      child: const Text("OK",
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 25,
+        fontWeight: FontWeight.w700
+      ),
+      ),
+      ),
+      ).show();
    
 
            }
            else{
+            
               showDialog(
         context: context,
         builder: (cxt) =>const Center(
@@ -327,6 +321,8 @@ FirebaseFirestore.instance.collection("Inscription").add({
             
             content: Icon(Icons.warning_amber,size: 100,color: Color.fromARGB(230, 235, 214, 28),),),
         ));
+
+
            }
         }
         else{
@@ -381,7 +377,7 @@ return Scaffold(
         Container(
             alignment: Alignment.center,
             padding: const EdgeInsets.all(10),
-            child: Image(image: AssetImage('assets/images/inscription.png'),
+            child: const Image(image: AssetImage('assets/images/inscription.png'),
             height: 200,),
             ),
         Container(
